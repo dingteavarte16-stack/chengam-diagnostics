@@ -186,29 +186,38 @@ export default function ChengamHomepage() {
     </p>
   </div>
 
- {/* ✅ Grid 1 */}
-<div className="grid md:grid-cols-3 gap-16 max-w-6xl mx-auto">
-  {[
-    "/images/labphoto/machine1.png",
-    "/images/labphoto/machine2.jpg",
-    "/images/labphoto/machine3.jpg",
-    "/images/labphoto/machine4.jpg",
-    "/images/labphoto/machine5.jpg",
-    "/images/labphoto/machine6.jpg",
-  ].map((img, i) => (
-    <motion.div
-      key={i}
-      whileHover={{ scale: 1.04 }}
-      className="overflow-hidden rounded-3xl shadow-2xl"
-    >
-      <img
-        src={img}
-        className="h-80 w-full object-cover"
-        alt={`labphoto-${i + 1}`}
-      />
-    </motion.div>
-  ))}
-</div>
+ {/* LAB PHOTO SECTION */}
+<section id="labphoto" className="py-28 px-6 bg-white">
+  <div className="text-center mb-20">
+    <h3 className="text-4xl font-bold">Our Laboratory</h3>
+    <p className="text-gray-500 mt-4">
+      Clean, hygienic and well-equipped laboratory environment
+    </p>
+  </div>
+
+  <div className="grid md:grid-cols-3 gap-16 max-w-6xl mx-auto">
+    {[
+      "/images/labphoto/machine1.png",
+      "/images/labphoto/machine2.jpg",
+      "/images/labphoto/machine3.jpg",
+      "/images/labphoto/machine4.jpg",
+      "/images/labphoto/machine5.jpg",
+      "/images/labphoto/machine6.jpg",
+    ].map((img, i) => (
+      <motion.div
+        key={i}
+        whileHover={{ scale: 1.04 }}
+        className="overflow-hidden rounded-3xl shadow-2xl"
+      >
+        <img
+          src={img}
+          className="h-80 w-full object-cover"
+          alt={`labphoto-${i + 1}`}
+        />
+      </motion.div>
+    ))}
+  </div>
+</section>
        {/* EQUIPMENT SECTION */}
 <section id="equipment" className="py-28 px-6 bg-blue-50">
   <div className="text-center mb-20">
