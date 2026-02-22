@@ -189,12 +189,12 @@ export default function ChengamHomepage() {
   {/* ✅ Grid 1: ONLY gap increased */}
   <div className="grid md:grid-cols-3 gap-16 max-w-6xl mx-auto">
     {[
-      "/images/labphoto/machine1.png",
-      "/images/labphoto/machine2.jpg",
-      "/images/labphoto/machine3.jpg",
-      "/images/labphoto/machine4.jpg",
-      "/images/labphoto/machine5.jpg",
-      "/images/labphoto/machine6.jpg",
+      "/images/labphoto/machine1.PNG",
+      "/images/labphoto/machine2.JPG",
+      "/images/labphoto/machine3.JPG",
+      "/images/labphoto/machine4.JPG",
+      "/images/labphoto/machine5.JPG",
+      "/images/labphoto/machine6.JPG",
 
     ].map((img, i) => (
       <motion.div
@@ -220,12 +220,14 @@ export default function ChengamHomepage() {
 
         <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
           {[
-            "/images/equipment/machine1.AVIF",
-            "/images/equipment/machine2.JFIF",
-            "/images/equipment/machine3.JPG",
-            "/images/equipment/machine4.JFIF",
-            "/images/equipment/machine5.JFIF",
-            "/images/equipment/machine6.avif",
+            [
+  "/images/equipment/machine1.avif",
+  "/images/equipment/machine2.jfif",
+  "/images/equipment/machine3.jpg",
+  "/images/equipment/machine4.jfif",
+  "/images/equipment/machine5.jfif",
+  "/images/equipment/machine6.avif",
+]
           ].map((img, i) => (
             <motion.div
               key={i}
@@ -246,7 +248,7 @@ export default function ChengamHomepage() {
       <section id="about" className="py-32 px-6 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <img
-            src="/images/clinic/machine1.jpg"
+            src="/images/clinic/machine1.JPG"
             className="rounded-3xl shadow-2xl"
             alt="clinic"
           />
