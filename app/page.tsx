@@ -13,11 +13,20 @@ export default function ChengamHomepage() {
           <h1 className="text-2xl font-extrabold bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent">
             Chengam Diagnostics & Healthcare
           </h1>
+
           <div className="hidden md:flex gap-8 items-center font-medium">
-            <a href="#services" className="hover:text-blue-600 transition">Services</a>
-            <a href="#staff" className="hover:text-blue-600 transition">Staff</a>
-            <a href="#equipment" className="hover:text-blue-600 transition">Equipment</a>
-            <a href="#about" className="hover:text-blue-600 transition">About</a>
+            <a href="#services" className="hover:text-blue-600 transition">
+              Services
+            </a>
+            <a href="#staff" className="hover:text-blue-600 transition">
+              Staff
+            </a>
+            <a href="#equipment" className="hover:text-blue-600 transition">
+              Equipment
+            </a>
+            <a href="#about" className="hover:text-blue-600 transition">
+              About
+            </a>
             <a
               href="tel:+918119862853"
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-xl shadow-lg transition"
@@ -51,8 +60,8 @@ export default function ChengamHomepage() {
             <a
               href="https://wa.me/918119862853"
               target="_blank"
-              className="bg-white text-blue-700 px-8 py-4 rounded-2xl font-semibold shadow-2xl hover:scale-105 transition"
               rel="noreferrer"
+              className="bg-white text-blue-700 px-8 py-4 rounded-2xl font-semibold shadow-2xl hover:scale-105 transition"
             >
               Book on WhatsApp
             </a>
@@ -107,7 +116,7 @@ export default function ChengamHomepage() {
             "Liver Function Test",
             "Biochem",
             "Hematology",
-            "serology",
+            "Serology",
             "Immunology",
           ].map((service, i) => (
             <motion.div
@@ -136,7 +145,7 @@ export default function ChengamHomepage() {
           {[
             {
               name: "Dr.Lalremmawia",
-              role: "MD(Internal Medicine),PGDGM(Geriatric),\nCCEBDM(Diabetes),CCMT(Thyroid)",
+              role: "MD(Internal Medicine), PGDGM(Geriatric), CCEBDM(Diabetes), CCMT(Thyroid)",
               img: "/images/doctors/dr1.png",
             },
             {
@@ -155,11 +164,7 @@ export default function ChengamHomepage() {
               whileHover={{ y: -10 }}
               className="bg-blue-50 rounded-3xl shadow-xl overflow-hidden"
             >
-              <img
-                src={person.img}
-                className="h-72 w-full object-cover"
-                alt={person.name}
-              />
+              <img src={person.img} className="h-72 w-full object-cover" alt={person.name} />
               <div className="p-6 text-center">
                 <h4 className="text-xl font-bold">{person.name}</h4>
                 <p className="text-blue-600 font-medium">{person.role}</p>
@@ -169,96 +174,79 @@ export default function ChengamHomepage() {
         </div>
       </section>
 
-   {/* clinic & Pharmacy picture */}
-<section id="equipment" className="py-28 px-6 bg-blue-50">
-  <div className="text-center mb-20">
-    <h3 className="text-4xl font-bold">Clinic and Pharmacy Gallery</h3>
+      {/* CLINIC & PHARMACY SECTION */}
+      <section id="clinic-pharmacy" className="py-28 px-6 bg-blue-50">
+        <div className="text-center mb-20">
+          <h3 className="text-4xl font-bold">Clinic and Pharmacy</h3>
+          <p className="text-gray-500 mt-4 max-w-5xl mx-auto leading-relaxed">
+            Our clinic is supported by professional and caring medical staff who are dedicated to delivering quality
+            healthcare services with a patient-first approach. We provide genuine and high-quality medicines that are
+            properly stored to maintain their effectiveness. Our pharmacy offers affordable and trusted services,
+            ensuring patients receive the best care in a comfortable environment. We maintain a strong focus on safety,
+            cleanliness, and compassionate care at every step.
+          </p>
+        </div>
+      </section>
 
-    {/* fixed: no <p> inside <p> */}
-    <p className="text-gray-500 mt-4 max-w-5xl mx-auto leading-relaxed">
-      Our clinic is supported by professional and caring medical staff who are dedicated to delivering quality
-      healthcare services with a patient-first approach.
-    
-     We provide genuine and high-quality medicines that are properly stored to maintain their effectiveness.
-      
-      Our pharmacy offers affordable and trusted services, ensuring patients receive the best care in a comfortable
-      environment. We maintain a strong focus on safety, cleanliness, and compassionate care at every step.
-    </p>
-  </div>
+      {/* LAB PHOTO SECTION */}
+      <section id="labphoto" className="py-28 px-6 bg-white">
+        <div className="text-center mb-20">
+          <h3 className="text-4xl font-bold">Our Laboratory</h3>
+          <p className="text-gray-500 mt-4">Clean, hygienic and well-equipped laboratory environment</p>
+        </div>
 
- {/* LAB PHOTO SECTION */}
-<section id="labphoto" className="py-28 px-6 bg-white">
-  <div className="text-center mb-20">
-    <h3 className="text-4xl font-bold">Our Laboratory</h3>
-    <p className="text-gray-500 mt-4">
-      Clean, hygienic and well-equipped laboratory environment
-    </p>
-  </div>
+        <div className="grid md:grid-cols-3 gap-16 max-w-6xl mx-auto">
+          {[
+            "/images/labphoto/machine1.png",
+            "/images/labphoto/machine2.jpg",
+            "/images/labphoto/machine3.jpg",
+            "/images/labphoto/machine4.jpg",
+            "/images/labphoto/machine5.jpg",
+            "/images/labphoto/machine6.jpg",
+          ].map((img, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.04 }}
+              className="overflow-hidden rounded-3xl shadow-2xl"
+            >
+              <img src={img} className="h-80 w-full object-cover" alt={`labphoto-${i + 1}`} />
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
-  <div className="grid md:grid-cols-3 gap-16 max-w-6xl mx-auto">
-    {[
-      "/images/labphoto/machine1.png",
-      "/images/labphoto/machine2.jpg",
-      "/images/labphoto/machine3.jpg",
-      "/images/labphoto/machine4.jpg",
-      "/images/labphoto/machine5.jpg",
-      "/images/labphoto/machine6.jpg",
-    ].map((img, i) => (
-      <motion.div
-        key={i}
-        whileHover={{ scale: 1.04 }}
-        className="overflow-hidden rounded-3xl shadow-2xl"
-      >
-        <img
-          src={img}
-          className="h-80 w-full object-cover"
-          alt={`labphoto-${i + 1}`}
-        />
-      </motion.div>
-    ))}
-  </div>
-</section>
-       {/* EQUIPMENT SECTION */}
-<section id="equipment" className="py-28 px-6 bg-blue-50">
-  <div className="text-center mb-20">
-    <h3 className="text-4xl font-bold">Advanced Laboratory Equipment</h3>
-    <p className="text-gray-500 mt-4">
-      Modern machines ensuring accurate and fast test results
-    </p>
-  </div>
+      {/* EQUIPMENT SECTION */}
+      <section id="equipment" className="py-28 px-6 bg-blue-50">
+        <div className="text-center mb-20">
+          <h3 className="text-4xl font-bold">Advanced Laboratory Equipment</h3>
+          <p className="text-gray-500 mt-4">Modern machines ensuring accurate and fast test results</p>
+        </div>
 
-  <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-    {[
-      "/images/equipment/machine1.avif",
-      "/images/equipment/machine2.jfif",
-      "/images/equipment/machine3.jpg",
-      "/images/equipment/machine4.jfif",
-      "/images/equipment/machine5.jfif",
-      "/images/equipment/machine6.avif",
-    ].map((img, i) => (
-      <motion.div
-        key={i}
-        whileHover={{ scale: 1.04 }}
-        className="overflow-hidden rounded-3xl shadow-2xl"
-      >
-        <img
-          src={img}
-          className="h-80 w-full object-cover"
-          alt={`equipment-${i + 1}`}
-        />
-      </motion.div>
-    ))}
-  </div>
-</section>
+        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          {[
+            "/images/equipment/machine1.avif",
+            "/images/equipment/machine2.jfif",
+            "/images/equipment/machine3.jpg",
+            "/images/equipment/machine4.jfif",
+            "/images/equipment/machine5.jfif",
+            "/images/equipment/machine6.avif",
+          ].map((img, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.04 }}
+              className="overflow-hidden rounded-3xl shadow-2xl"
+            >
+              <img src={img} className="h-80 w-full object-cover" alt={`equipment-${i + 1}`} />
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
       {/* ABOUT US */}
       <section id="about" className="py-32 px-6 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <img
-            src="/images/clinic/machine1.JPG"
-            className="rounded-3xl shadow-2xl"
-            alt="clinic"
-          />
+          {/* IMPORTANT: make sure your real file name matches this exactly */}
+          <img src="/images/clinic/machine1.jpg" className="rounded-3xl shadow-2xl" alt="clinic" />
 
           <div>
             <h3 className="text-4xl font-bold mb-6">About Chengam Diagnostics</h3>
@@ -284,13 +272,11 @@ export default function ChengamHomepage() {
 
         <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
           {[1, 2, 3].map((_, i) => (
-            <motion.div
-              whileHover={{ y: -8 }}
-              key={i}
-              className="bg-white rounded-3xl shadow-xl p-8"
-            >
+            <motion.div whileHover={{ y: -8 }} key={i} className="bg-white rounded-3xl shadow-xl p-8">
               <div className="flex gap-1 text-yellow-500 mb-3">
-                {[1, 2, 3, 4, 5].map((s) => <Star key={s} fill="currentColor" />)}
+                {[1, 2, 3, 4, 5].map((s) => (
+                  <Star key={s} fill="currentColor" />
+                ))}
               </div>
               <p className="text-gray-600">
                 Very professional staff with quick turnaround for reports. One of the most reliable diagnostic centers.
@@ -378,9 +364,7 @@ export default function ChengamHomepage() {
           </div>
         </div>
 
-        <p className="text-center mt-10 text-sm">
-          © {new Date().getFullYear()} Chengam Diagnostics. All rights reserved.
-        </p>
+        <p className="text-center mt-10 text-sm">© {new Date().getFullYear()} Chengam Diagnostics. All rights reserved.</p>
       </footer>
 
       {/* FLOATING BUTTONS */}
