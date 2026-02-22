@@ -199,9 +199,9 @@ export default function ChengamHomepage() {
           {[
             "/images/labphoto/machine1.png",
             "/images/labphoto/machine2.jpg",
-            "/images/labphoto/machine3.jpg",
+            "/images/labphoto/machine3.JPG",
             "/images/labphoto/machine4.jpg",
-            "/images/labphoto/machine5.jpg",
+            "/images/labphoto/machine5.JPG",
             "/images/labphoto/machine6.jpg",
           ].map((img, i) => (
             <motion.div
@@ -246,7 +246,7 @@ export default function ChengamHomepage() {
       <section id="about" className="py-32 px-6 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           {/* IMPORTANT: make sure your real file name matches this exactly */}
-          <img src="/images/clinic/machine1.jpg" className="rounded-3xl shadow-2xl" alt="clinic" />
+          <img src="/images/clinic/machine1.JPG" className="rounded-3xl shadow-2xl" alt="clinic" />
 
           <div>
             <h3 className="text-4xl font-bold mb-6">About Chengam Diagnostics</h3>
