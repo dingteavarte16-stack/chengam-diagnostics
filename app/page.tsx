@@ -52,6 +52,7 @@ export default function ChengamHomepage() {
               href="https://wa.me/918119862853"
               target="_blank"
               className="bg-white text-blue-700 px-8 py-4 rounded-2xl font-semibold shadow-2xl hover:scale-105 transition"
+              rel="noreferrer"
             >
               Book on WhatsApp
             </a>
@@ -70,9 +71,9 @@ export default function ChengamHomepage() {
       <section className="relative -mt-14 z-10 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
           {[
-            ["10,000+", "Patients Served"],
+            ["5000+", "Patients Served"],
             ["4.8★", "Google Rating"],
-            ["10+", "Years Experience"],
+            ["5+", "Years Experience"],
             ["Same Day", "Reports Available"],
           ].map((item, i) => (
             <motion.div
@@ -104,6 +105,10 @@ export default function ChengamHomepage() {
             "Thyroid Profile",
             "Urine Analysis",
             "Liver Function Test",
+            "Biochem",
+            "Hematology",
+            "serology",
+            "Immunology",
           ].map((service, i) => (
             <motion.div
               whileHover={{ y: -12 }}
@@ -122,25 +127,27 @@ export default function ChengamHomepage() {
       <section id="staff" className="py-28 px-6 bg-white">
         <div className="text-center mb-20">
           <h3 className="text-4xl font-bold">Meet Our Medical Experts</h3>
-          <p className="text-gray-500 mt-4">Experienced doctors and friendly healthcare staff dedicated to your wellbeing</p>
+          <p className="text-gray-500 mt-4">
+            Experienced doctors and friendly healthcare staff dedicated to your wellbeing
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
           {[
             {
-              name: "Dr. Replace Name",
-              role: "Senior Pathologist",
-              img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d",
+              name: "Dr.Lalremmawia",
+              role: "MD(Internal Medicine),PGDGM(Geriatric),\nCCEBDM(Diabetes),CCMT(Thyroid)",
+              img: "/images/doctors/dr1.png",
             },
             {
-              name: "Dr. Replace Name",
-              role: "General Physician",
-              img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2",
+              name: "Lalrinngheta",
+              role: "Diploma in Pharmacy (D.Pharm) & Owner",
+              img: "/images/doctors/dr2.png",
             },
             {
               name: "Staff Replace",
               role: "Lab Technician",
-              img: "https://images.unsplash.com/photo-1594824388853-2c5c1f4d2b2b",
+              img: "/images/doctors/dr3.jpg",
             },
           ].map((person, i) => (
             <motion.div
@@ -149,9 +156,9 @@ export default function ChengamHomepage() {
               className="bg-blue-50 rounded-3xl shadow-xl overflow-hidden"
             >
               <img
-                src={`${person.img}?auto=format&fit=crop&w=800&q=80`}
+                src={person.img}
                 className="h-72 w-full object-cover"
-                alt="doctor"
+                alt={person.name}
               />
               <div className="p-6 text-center">
                 <h4 className="text-xl font-bold">{person.name}</h4>
@@ -162,7 +169,69 @@ export default function ChengamHomepage() {
         </div>
       </section>
 
-      {/* EQUIPMENT SECTION */}
+   {/* clinic & Pharmacy picture */}
+<section id="equipment" className="py-28 px-6 bg-blue-50">
+  <div className="text-center mb-20">
+    <h3 className="text-4xl font-bold">Clinic and Pharmacy Gallery</h3>
+
+    {/* fixed: no <p> inside <p> */}
+    <p className="text-gray-500 mt-4 max-w-5xl mx-auto leading-relaxed">
+      Our clinic is supported by professional and caring medical staff who are dedicated to delivering quality
+      healthcare services with a patient-first approach.
+    
+     We provide genuine and high-quality medicines that are properly stored to maintain their effectiveness.
+      
+      Our pharmacy offers affordable and trusted services, ensuring patients receive the best care in a comfortable
+      environment. We maintain a strong focus on safety, cleanliness, and compassionate care at every step.
+    </p>
+  </div>
+
+  {/* ✅ Grid 1: ONLY gap increased */}
+  <div className="grid md:grid-cols-3 gap-16 max-w-6xl mx-auto">
+    {[
+      "/images/labphoto/machine1.png",
+      "/images/labphoto/machine2.jpg",
+      "/images/labphoto/machine3.jpg",
+    ].map((img, i) => (
+      <motion.div
+        key={i}
+        whileHover={{ scale: 1.04 }}
+        className="overflow-hidden rounded-3xl shadow-2xl"
+      >
+        <img
+          src={img}
+          className="h-80 w-full object-cover"
+          alt={`equipment-${i + 1}`}
+        />
+      </motion.div>
+    ))}
+  </div>
+
+  {/* ✅ Space between both rows */}
+  <div className="mt-16" />
+
+  {/* ✅ Grid 2: ONLY gap increased */}
+  <div className="grid md:grid-cols-3 gap-16 max-w-6xl mx-auto">
+    {[
+      "/images/labphoto/machine4.jpg",
+      "/images/labphoto/machine5.jpg",
+      "/images/labphoto/machine6.jpg",
+    ].map((img, i) => (
+      <motion.div
+        key={i}
+        whileHover={{ scale: 1.04 }}
+        className="overflow-hidden rounded-3xl shadow-2xl"
+      >
+        <img
+          src={img}
+          className="h-80 w-full object-cover"
+          alt={`equipment-2-${i + 1}`}
+        />
+      </motion.div>
+    ))}
+  </div>
+</section>
+        {/* EQUIPMENT SECTION */}
       <section id="equipment" className="py-28 px-6 bg-blue-50">
         <div className="text-center mb-20">
           <h3 className="text-4xl font-bold">Advanced Laboratory Equipment</h3>
@@ -171,9 +240,12 @@ export default function ChengamHomepage() {
 
         <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
           {[
-            "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
-            "https://images.unsplash.com/photo-1579154204601-01588f351e67",
-            "https://images.unsplash.com/photo-1530026405186-ed1f139313f8",
+            "/images/equipment/machine1.AVIF",
+            "/images/equipment/machine2.JFIF",
+            "/images/equipment/machine3.JPG",
+            "/images/equipment/machine4.JFIF",
+            "/images/equipment/machine5.JFIF",
+            "/images/equipment/machine6.avif",
           ].map((img, i) => (
             <motion.div
               key={i}
@@ -181,9 +253,9 @@ export default function ChengamHomepage() {
               className="overflow-hidden rounded-3xl shadow-2xl"
             >
               <img
-                src={`${img}?auto=format&fit=crop&w=900&q=80`}
+                src={img}
                 className="h-80 w-full object-cover"
-                alt="lab equipment"
+                alt={`equipment-${i + 1}`}
               />
             </motion.div>
           ))}
@@ -194,7 +266,7 @@ export default function ChengamHomepage() {
       <section id="about" className="py-32 px-6 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <img
-            src="https://images.unsplash.com/photo-1580281657527-47f249e8f4df?auto=format&fit=crop&w=900&q=80"
+            src="/images/clinic/machine1.jpg"
             className="rounded-3xl shadow-2xl"
             alt="clinic"
           />
@@ -202,11 +274,14 @@ export default function ChengamHomepage() {
           <div>
             <h3 className="text-4xl font-bold mb-6">About Chengam Diagnostics</h3>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              Chengam Diagnostics is committed to delivering high-quality healthcare services with precision, speed, and compassion. Our state-of-the-art laboratory, experienced doctors, and modern diagnostic technology ensure that every patient receives reliable results and exceptional care.
+              Chengam Diagnostics is committed to delivering high-quality healthcare services with precision, speed,
+              and compassion. Our state-of-the-art laboratory, experienced doctors, and modern diagnostic technology
+              ensure that every patient receives reliable results and exceptional care.
             </p>
 
             <p className="text-gray-600 text-lg leading-relaxed">
-              We believe early detection saves lives. That is why we focus on accuracy, hygiene, and patient comfort while maintaining the highest medical standards in Aizawl.
+              We believe early detection saves lives. That is why we focus on accuracy, hygiene, and patient comfort
+              while maintaining the highest medical standards in Aizawl.
             </p>
           </div>
         </div>
@@ -226,7 +301,7 @@ export default function ChengamHomepage() {
               className="bg-white rounded-3xl shadow-xl p-8"
             >
               <div className="flex gap-1 text-yellow-500 mb-3">
-                {[1,2,3,4,5].map((s)=> <Star key={s} fill="currentColor" />)}
+                {[1, 2, 3, 4, 5].map((s) => <Star key={s} fill="currentColor" />)}
               </div>
               <p className="text-gray-600">
                 Very professional staff with quick turnaround for reports. One of the most reliable diagnostic centers.
@@ -250,17 +325,18 @@ export default function ChengamHomepage() {
             height="450"
             style={{ border: 0 }}
             loading="lazy"
+            title="map"
           ></iframe>
         </div>
 
         <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
           <div className="bg-white p-6 rounded-2xl shadow">
             <MapPin className="mx-auto text-blue-600 mb-2" />
-            Aizawl, Mizoram
+            C, VLDS Building, 28, Ramhlun N Rd, beside Grace Post Office, Aizawl, Mizoram 796012
           </div>
           <div className="bg-white p-6 rounded-2xl shadow">
             <Clock className="mx-auto text-blue-600 mb-2" />
-            Open 7:00am – 6:00pm
+            Open 7:00am – 8:30pm
           </div>
           <div className="bg-white p-6 rounded-2xl shadow">
             <Phone className="mx-auto text-blue-600 mb-2" />
@@ -271,9 +347,7 @@ export default function ChengamHomepage() {
 
       {/* CTA */}
       <section className="py-28 text-center bg-gradient-to-r from-blue-700 to-blue-500 text-white">
-        <h3 className="text-5xl font-bold mb-6">
-          Need a Test? Get Booked in Minutes.
-        </h3>
+        <h3 className="text-5xl font-bold mb-6">Need a Test? Get Booked in Minutes.</h3>
         <div className="flex justify-center gap-6 flex-wrap">
           <a
             href="tel:+918119862853"
@@ -285,6 +359,7 @@ export default function ChengamHomepage() {
           <a
             href="https://wa.me/918119862853"
             target="_blank"
+            rel="noreferrer"
             className="bg-green-500 px-10 py-4 rounded-2xl font-semibold shadow-xl hover:scale-105 transition"
           >
             WhatsApp
@@ -296,9 +371,7 @@ export default function ChengamHomepage() {
       <footer className="bg-gray-900 text-gray-300 py-16 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
           <div>
-            <h4 className="text-2xl font-bold text-white mb-3">
-              Chengam Diagnostics
-            </h4>
+            <h4 className="text-2xl font-bold text-white mb-3">Chengam Diagnostics</h4>
             <p>Serving Aizawl with trusted diagnostics and modern healthcare.</p>
           </div>
 
@@ -326,6 +399,7 @@ export default function ChengamHomepage() {
         <a
           href="https://wa.me/918119862853"
           target="_blank"
+          rel="noreferrer"
           className="bg-green-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition"
         >
           <MessageCircle />
