@@ -211,38 +211,38 @@ export default function ChengamHomepage() {
     ))}
   </div>
 </section>
-        {/* EQUIPMENT SECTION */}
-      <section id="equipment" className="py-28 px-6 bg-blue-50">
-        <div className="text-center mb-20">
-          <h3 className="text-4xl font-bold">Advanced Laboratory Equipment</h3>
-          <p className="text-gray-500 mt-4">Modern machines ensuring accurate and fast test results</p>
-        </div>
+       {/* EQUIPMENT SECTION */}
+<section id="equipment" className="py-28 px-6 bg-blue-50">
+  <div className="text-center mb-20">
+    <h3 className="text-4xl font-bold">Advanced Laboratory Equipment</h3>
+    <p className="text-gray-500 mt-4">
+      Modern machines ensuring accurate and fast test results
+    </p>
+  </div>
 
-        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          {[
-            [
-  "/images/equipment/machine1.avif",
-  "/images/equipment/machine2.jfif",
-  "/images/equipment/machine3.jpg",
-  "/images/equipment/machine4.jfif",
-  "/images/equipment/machine5.jfif",
-  "/images/equipment/machine6.avif",
-]
-          ].map((img, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.04 }}
-              className="overflow-hidden rounded-3xl shadow-2xl"
-            >
-              <img
-                src={img}
-                className="h-80 w-full object-cover"
-                alt={`equipment-${i + 1}`}
-              />
-            </motion.div>
-          ))}
-        </div>
-      </section>
+  <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+    {[
+      "/images/equipment/machine1.avif",
+      "/images/equipment/machine2.jfif",
+      "/images/equipment/machine3.jpg",
+      "/images/equipment/machine4.jfif",
+      "/images/equipment/machine5.jfif",
+      "/images/equipment/machine6.avif",
+    ].map((img, i) => (
+      <motion.div
+        key={i}
+        whileHover={{ scale: 1.04 }}
+        className="overflow-hidden rounded-3xl shadow-2xl"
+      >
+        <img
+          src={img}
+          className="h-80 w-full object-cover"
+          alt={`equipment-${i + 1}`}
+        />
+      </motion.div>
+    ))}
+  </div>
+</section>
 
       {/* ABOUT US */}
       <section id="about" className="py-32 px-6 bg-white">
