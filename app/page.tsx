@@ -186,31 +186,29 @@ export default function ChengamHomepage() {
     </p>
   </div>
 
-  {/* ✅ Grid 1: ONLY gap increased */}
-  <div className="grid md:grid-cols-3 gap-16 max-w-6xl mx-auto">
-    {[
-      "/images/labphoto/machine1.PNG",
-      "/images/labphoto/machine2.JPG",
-      "/images/labphoto/machine3.JPG",
-      "/images/labphoto/machine4.JPG",
-      "/images/labphoto/machine5.JPG",
-      "/images/labphoto/machine6.JPG",
-
-    ].map((img, i) => (
-      <motion.div
-        key={i}
-        whileHover={{ scale: 1.04 }}
-        className="overflow-hidden rounded-3xl shadow-2xl"
-      >
-        <img
-          src={img}
-          className="h-80 w-full object-cover"
-          alt={`equipment-${i + 1}`}
-        />
-      </motion.div>
-    ))}
-  </div>
-</section>
+ {/* ✅ Grid 1 */}
+<div className="grid md:grid-cols-3 gap-16 max-w-6xl mx-auto">
+  {[
+    "/images/labphoto/machine1.png",
+    "/images/labphoto/machine2.jpg",
+    "/images/labphoto/machine3.jpg",
+    "/images/labphoto/machine4.jpg",
+    "/images/labphoto/machine5.jpg",
+    "/images/labphoto/machine6.jpg",
+  ].map((img, i) => (
+    <motion.div
+      key={i}
+      whileHover={{ scale: 1.04 }}
+      className="overflow-hidden rounded-3xl shadow-2xl"
+    >
+      <img
+        src={img}
+        className="h-80 w-full object-cover"
+        alt={`labphoto-${i + 1}`}
+      />
+    </motion.div>
+  ))}
+</div>
        {/* EQUIPMENT SECTION */}
 <section id="equipment" className="py-28 px-6 bg-blue-50">
   <div className="text-center mb-20">
