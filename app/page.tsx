@@ -2,9 +2,54 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, Microscope, Star, MapPin, Clock } from "lucide-react";
+import {
+  Phone,
+  MessageCircle,
+  Microscope,
+  Star,
+  MapPin,
+  Clock,
+  FlaskConical,
+  Droplets,
+  ShieldCheck,
+  FileText,
+} from "lucide-react";
 
 export default function ChengamHomepage() {
+  const services = [
+    {
+      title: "Biochemistry",
+      description:
+        "Comprehensive blood chemistry analysis for liver, kidney, and metabolic health assessment.",
+      Icon: FlaskConical,
+    },
+    {
+      title: "Haematology",
+      description:
+        "Complete blood count and advanced testing for anemia, infections, and blood-related disorders.",
+      Icon: Droplets,
+    },
+    {
+      title: "Seralogy",
+      description:
+        "Antibody and antigen testing to support diagnosis of infectious and immune-related conditions.",
+      Icon: ShieldCheck,
+    },
+    {
+      title: "Immunology",
+      description:
+        "Advanced immune diagnostics for allergies, autoimmune conditions, and chronic inflammation monitoring.",
+      Icon: Microscope,
+    },
+    {
+      title: "Laboratory Tests Rate List",
+      description:
+        "View our updated price list for all available laboratory investigations.",
+      Icon: FileText,
+      href: "/rate-list",
+    },
+  ];
+
   return (
     <div className="font-sans bg-gradient-to-b from-blue-50 via-white to-blue-50 text-gray-800">
       {/* ULTRA PREMIUM NAVBAR */}
@@ -81,7 +126,7 @@ export default function ChengamHomepage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
           {[
             ["5000+", "Patients Served"],
-            ["4.8★", "Google Rating"],
+            ["4.7★", "Google Rating"],
             ["5+", "Years Experience"],
             ["Same Day", "Reports Available"],
           ].map((item, i) => (
@@ -103,30 +148,36 @@ export default function ChengamHomepage() {
       <section id="services" className="py-28 px-6">
         <div className="text-center mb-20">
           <h3 className="text-4xl font-bold">Comprehensive Diagnostic Services</h3>
-          <p className="text-gray-500 mt-4">Precision testing powered by advanced laboratory technology</p>
+          <p className="text-gray-500 mt-4">
+            Precision testing powered by advanced laboratory technology
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-          {[
-            "Blood Tests",
-            "Full Body Checkup",
-            "Diabetes Screening",
-            "Thyroid Profile",
-            "Urine Analysis",
-            "Liver Function Test",
-            "Biochem",
-            "Hematology",
-            "Serology",
-            "Immunology",
-          ].map((service, i) => (
+          {services.map((service, i) => (
             <motion.div
               whileHover={{ y: -12 }}
               key={i}
               className="rounded-3xl shadow-xl hover:shadow-2xl transition p-10 bg-white border"
             >
-              <Microscope className="mb-4 text-blue-600" size={36} />
-              <h4 className="text-xl font-semibold mb-2">{service}</h4>
-              <p className="text-gray-500">Accurate, reliable, and fast diagnostic reporting.</p>
+              <service.Icon className="mb-4 text-blue-600" size={36} />
+
+              {service.href ? (
+                <a
+                  href={service.href}
+                  className="text-xl font-semibold mb-2 text-blue-700 hover:text-blue-800 underline underline-offset-4"
+                >
+                  {service.title}
+                </a>
+              ) : (
+                <h4 className="text-xl font-semibold mb-2">{service.title}</h4>
+              )}
+
+              <p className="text-gray-500">{service.description}</p>
+
+              {service.href && (
+                <p className="mt-3 text-sm text-gray-600">Tap to view & download PDF</p>
+              )}
             </motion.div>
           ))}
         </div>
@@ -150,14 +201,25 @@ export default function ChengamHomepage() {
             },
             {
               name: "Lalrinngheta",
-              role: "Diploma in Pharmacy (D.Pharm) & Owner",
+              role: "Diploma in Pharmacy (D.Pharm),Chengam Diagnostics & Healthcare  Owner",
               img: "/images/doctors/dr2.png",
             },
             {
-              name: "Staff Replace",
-              role: "Lab Technician",
-              img: "/images/doctors/dr3.jpg",
+              name: "Staff",
+              role: "Receptionist",
+              img: "/images/doctors/dr4.jpg",
             },
+             {
+              name: "Staff",
+              role: "Lab Technician",
+              img: "/images/doctors/dr5.jpg",
+            },
+             {
+              name: "Staff",
+              role: "Lab Assistant",
+              img: "/images/doctors/dr6.jpg",
+            },
+             
           ].map((person, i) => (
             <motion.div
               key={i}
@@ -224,12 +286,12 @@ export default function ChengamHomepage() {
 
         <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
           {[
-            "/images/equipment/machine1.avif",
+            "/images/equipment/machine1.jfif",
             "/images/equipment/machine2.jfif",
-            "/images/equipment/machine3.jpg",
+            "/images/equipment/machine3.jfif",
             "/images/equipment/machine4.jfif",
             "/images/equipment/machine5.jfif",
-            "/images/equipment/machine6.avif",
+            "/images/equipment/machine6.jfif",
           ].map((img, i) => (
             <motion.div
               key={i}
@@ -245,8 +307,11 @@ export default function ChengamHomepage() {
       {/* ABOUT US */}
       <section id="about" className="py-32 px-6 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          {/* IMPORTANT: make sure your real file name matches this exactly */}
-          <img src="/images/clinic/machine1.JPG" className="rounded-3xl shadow-2xl" alt="clinic" />
+          <img
+            src="/images/clinic/machine1.JPG"
+            className="rounded-3xl shadow-2xl"
+            alt="clinic"
+          />
 
           <div>
             <h3 className="text-4xl font-bold mb-6">About Chengam Diagnostics</h3>
@@ -264,28 +329,67 @@ export default function ChengamHomepage() {
         </div>
       </section>
 
-      {/* REVIEWS */}
-      <section id="reviews" className="bg-blue-50 py-28 px-6">
-        <div className="text-center mb-20">
-          <h3 className="text-4xl font-bold">What Patients Say</h3>
-        </div>
+    {/* REVIEWS */}
+<section id="reviews" className="bg-gradient-to-b from-blue-50 to-white py-28 px-6">
+  <div className="text-center mb-20">
+    <h3 className="text-4xl md:text-5xl font-extrabold">
+      What Patients Say
+    </h3>
+    <p className="text-gray-500 mt-4">
+      Trusted by families across Aizawl
+    </p>
+  </div>
 
-        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          {[1, 2, 3].map((_, i) => (
-            <motion.div whileHover={{ y: -8 }} key={i} className="bg-white rounded-3xl shadow-xl p-8">
-              <div className="flex gap-1 text-yellow-500 mb-3">
-                {[1, 2, 3, 4, 5].map((s) => (
-                  <Star key={s} fill="currentColor" />
-                ))}
-              </div>
-              <p className="text-gray-600">
-                Very professional staff with quick turnaround for reports. One of the most reliable diagnostic centers.
-              </p>
-              <p className="mt-4 font-semibold">Verified Patient</p>
-            </motion.div>
+  <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+    {[
+      {
+        name: "Dingtea VArte",
+        review:
+          "I was impressed with the professionalism and hygiene standards. The reports were accurate and delivered on time.",
+      },
+      {
+        name: "Mami Mami",
+        review:
+          "Patient care is up to satisfactory level. Patient counselling is done on medications..10 out of 10",
+      },
+      {
+        name: "Lalhruaizeli",
+        review:
+          "They care about the sick.. They are polite... They are a pleasure to approach the sick.",
+      },
+    ].map((item, i) => (
+      <motion.div
+        whileHover={{ y: -10 }}
+        key={i}
+        className="backdrop-blur-xl bg-white/80 border border-white/40 rounded-3xl shadow-2xl p-8 transition duration-300"
+      >
+        {/* Stars */}
+        <div className="flex gap-1 text-yellow-500 mb-4">
+          {[1, 2, 3, 4, 5].map((s) => (
+            <Star key={s} fill="currentColor" size={20} />
           ))}
         </div>
-      </section>
+
+        {/* Review Text */}
+        <p className="text-gray-700 leading-relaxed text-lg">
+          {item.review}
+        </p>
+
+        {/* Profile */}
+        <div className="flex items-center gap-4 mt-6">
+          <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
+            {item.name.charAt(0)}
+          </div>
+
+          <div>
+            <p className="font-semibold text-gray-900">{item.name}</p>
+            <p className="text-sm text-gray-500">Verified Patient</p>
+          </div>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</section>
 
       {/* LOCATION */}
       <section id="location" className="py-28 px-6">
@@ -364,7 +468,9 @@ export default function ChengamHomepage() {
           </div>
         </div>
 
-        <p className="text-center mt-10 text-sm">© {new Date().getFullYear()} Chengam Diagnostics. All rights reserved.</p>
+        <p className="text-center mt-10 text-sm">
+          © {new Date().getFullYear()} Chengam Diagnostics. All rights reserved.
+        </p>
       </footer>
 
       {/* FLOATING BUTTONS */}
