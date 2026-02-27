@@ -48,6 +48,13 @@ export default function ChengamHomepage() {
       Icon: FileText,
       href: "/rate-list",
     },
+        {
+      title: "Offer Packages",
+      description:
+        "View our updated Offer packages List with Price.",
+      Icon: FileText,
+      href: "/Offer-packages",
+    },
   ];
 
   return (
@@ -292,6 +299,8 @@ export default function ChengamHomepage() {
             "/images/equipment/machine4.jfif",
             "/images/equipment/machine5.jfif",
             "/images/equipment/machine6.jfif",
+            "/images/equipment/machine7.jfif",
+            "/images/equipment/machine8.jfif",
           ].map((img, i) => (
             <motion.div
               key={i}
