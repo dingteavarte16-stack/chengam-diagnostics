@@ -183,9 +183,10 @@ export default function ChengamHomepage() {
               <p className="text-gray-500">{service.description}</p>
 
               {service.href && (
-                <p className="mt-3 text-sm text-gray-600">Tap to view & download PDF</p>
+                <p className="mt-3 text-sm text-gray-600">Tap to view</p>
               )}
             </motion.div>
+            
           ))}
         </div>
       </section>
